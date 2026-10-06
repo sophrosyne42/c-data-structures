@@ -2,7 +2,7 @@ An assortment of data structures I have implemented for class projects and assig
 
 # scapegoat_bst
 
-I implemented an binary search tree called a scapegoat tree. This implementation only stores integers.
+I implemented a binary search tree called a scapegoat tree. This implementation only stores integers.
 
 A [scapegoat tree](https://en.wikipedia.org/wiki/Scapegoat_tree) is a kind of self-balancing binary search tree which defers rebalancing. It does this by keeping track of the α-height, rebalancing when it inserts a node (aka, the 'scapegoat') which breaks the invariant:
 
