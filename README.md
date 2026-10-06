@@ -1,6 +1,6 @@
 An assortment of data structures I have implemented for class projects and assignments.
 
-# scapegoat
+# scapegoat_bst
 
 I implemented an binary search tree called a scapegoat tree. This implementation only stores integers.
 
