@@ -24,7 +24,7 @@ stack_t* stack_init(size_t data_size) {
 // Callers must only push data whose type is the same
 // as the type that the stack was initiated with using
 // `sizeof(type)`. Otherwise, badness can occur.
-void _stack_push(stack_t* stack, void* data) {
+void stack_push(stack_t* stack, void* data) {
     stack_node_t* new_node = malloc(sizeof(stack_node_t));
     void* new_data = malloc(stack->data_size);
     if (!new_node || !new_data) {
@@ -43,6 +43,7 @@ void _stack_push(stack_t* stack, void* data) {
 
     return;
 }
+#define stack_push(stack, data) stack_push((stack), (void*)(data))
 
 
 // Caller needs to cast the result buffer to a type that the 
@@ -52,7 +53,7 @@ void _stack_push(stack_t* stack, void* data) {
 // The caller is responsible for whatever memory is held
 // by their provided buffer, but not the memory used by the
 // stack.
-void* _stack_pop(stack_t* stack, void* buffer) {
+void* stack_pop(stack_t* stack, void* buffer) {
     if (stack == NULL) return NULL;
     stack_node_t* top = stack->top;
     if (top == NULL || stack->length == 0) {
@@ -71,6 +72,7 @@ void* _stack_pop(stack_t* stack, void* buffer) {
         return buffer;
     }
 }
+#define stack_pop(stack, buffer) stack_pop((stack), (void*)(buffer))
 
 void stack_free(stack_t* stack) {
     char throwaway[stack->data_size];

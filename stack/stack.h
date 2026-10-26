@@ -25,11 +25,9 @@ typedef struct stack_t {
 
 stack_t* stack_init(size_t data_size);
 
-void _stack_push(stack_t* stack, void* data);
-#define stack_push(stack, data) _stack_push((stack), (void*)(data))
+void stack_push(stack_t* stack, void* data);
 
-void* _stack_pop(stack_t* stack, void* buffer);
-#define stack_pop(stack, buffer) _stack_pop((stack), (void*)(buffer))
+void* stack_pop(stack_t* stack, void* buffer);
 
 void stack_free(stack_t* stack);
 
