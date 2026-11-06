@@ -17,3 +17,9 @@ This is a relatively standard implementation of a hash table. This implementatio
 This implementation of a hash table utilizes separate chaining with a linked list to deal with collisions.
 
 For the hash function, I use a 64-bit cyclic-redundancy-check algorithm, which was provided by my professor in the assignment prompt that involved creating a hash table.
+
+# stack
+
+An implementation of a stack using heap-allocated linked list nodes. This implementation uses type erasure to achieve polymorphism. 
+
+A more robust implementation is planned that uses macros to avoid type erasure and therefore preserve type checking provided by the compiler.
